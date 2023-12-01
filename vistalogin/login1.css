@@ -1,0 +1,56 @@
+.wrapper {
+  background: #fff6e6;
+}
+@media (min-width: 1024px) {
+  .shape {
+    background: #ffa300;
+  }
+  .shape.right {
+    background: #004420;
+  }
+}
+.forget-password-label,
+h1 {
+  color: #C1C1C2;
+}
+.forget-password-label:active,
+.forget-password-label:focus,
+.forget-password-label:hover {
+  color: #9a9a9b !important;
+  text-decoration: none;
+}
+.button-submit {
+  background-color: #ffa300;
+}
+.button-submit:hover,
+.button-submit:active,
+.button-submit:focus {
+  background-color: #e69300;
+}
+input {
+  background: #fff6e6;
+}
+.wrapper:after {
+  background-image: linear-gradient(rgba(0, 68, 32, 0.5), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15), rgba(255, 163, 0, 0.5)), url(../../../images/login/login.jpg);
+}
+.shape {
+  background: #004420;
+}
+.shape.right {
+  background: #ffa300;
+}
+.button-submit {
+  background: #004420;
+}
+.button-submit:hover {
+  background: #012c15;
+}
+.forget-password-label {
+  color: #274736;
+}
+h1 {
+  color: #000000;
+}
+.wrapper {
+  background: rgba(240, 247, 243, 0.36);
+}

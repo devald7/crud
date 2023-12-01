@@ -1,0 +1,10 @@
+.ss {
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-radius: 3%;
+}
+
+.ss:hover {
+    opacity: 80%;
+    background-color: goldenrod;
+}

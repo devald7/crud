@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"> 
+<meta charset="UTF-8" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directorio telefónico UNAP</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!-- Favicon -->
+
+<link rel='stylesheet' href='css/bootstrap.min.css'>
+<link rel='stylesheet' href='css/estilos.css'>
+
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/bootstrap.js'></script>
+
+<script type="text/javascript">
+
+	function limpiar() {
+		$(':input').not(':button, :submit, :reset, :hidden, :checkbox, :radio').val('');
+		$(':checkbox, :radio').prop('checked', false);
+		$("#comboDep").hide();
+		$("#comboFac").hide();
+
+	}
+
+
+</script>
+
+
+
+</head>
+
+<body onload="limpiar()">
+
+	<div class="wrapper">
+		<div id="muestra">
+			<div id="cab" class="content_header">
+				<div class="fixed">
+					<nav class="navbar navbar-inverse colorMenu" role="navigation">
+						<div class="navbar-header">
+							<a class="enlace" href="https://enlinea.unapiquitos.edu.pe/"><img class="imgescudo" src='image/escudo.png'
+									alt=''></a>
+							<a id="adesktop" class="navbar-brand " href="index.html">Directorio telefónico UNAP</a>
+							<a id="amovil" class="navbar-brand" href="index.html">Directorio telefónico</a>
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Desplegar navegación</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div id="oculta" class="collapse navbar-collapse navbar-ex1-collapse">
+
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="">Telefonía</a></li>
+								<li><a href="">Correo</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="sectionPrincipal">
+				<div class="content_principal">
+					<div class="formulario">
+						<div class="headerForm">Ver directorio por:</div>
+						<div class="panelForm">
+							<form id="form1" name="form1" action="/directorio/directorio.php" method="POST">
+								<div class="content_radio">
+									<div class="radioform"><label for="radio1"><input type="radio" name="selectorTipo" id="radio1"
+												value="dependencia"><span>Dependencia</span></label></div>
+									<div class="radioform"><label for="radio2"><input type="radio" name="selectorTipo" id="radio2"
+												value="facultad"><span>Facultad</span></label></div>
+								</div>
+
+								<div id="divi" class="componentForm">
+									<select name="dep" id="comboDep" class="selectStyle">
+										
+									</select>
+
+									<!-- AQUI COMIENZA LAS FACULTADES -->
+
+									<select name="fac" id="comboFac" class="selectStyle">
+										<option value="">Seleccione</option>
+
+										
+									</select>
+								</div>
+								<input type="hidden" name="variable" id="variableForm1" value="">
+								<div class="btnform"><input type='submit' value='Mostrar' class="btn btnLarge"></div>
+							</form>
+						</div>
+					</div>
+
+					<div class="formulario">
+						<div class="headerForm">Búsqueda por criterios</div>
+						<div class="panelForm">
+							<form id="form2" name="form2" action="/directorio/directorio.php" method="POST">
+								<div class="componentForm"><input type='text' name='nombre' placeholder='Nombres y Apellidos'
+										class="textForm"></div>
+								<input type="hidden" name="variable" id="variableForm2" value="0">
+								<div class="btnform"><input type='submit' value='Buscar' class="btn btnLarge"></div>
+							</form>
+						</div><!-- panelForm-->
+					</div><!-- formulario-->
+				</div><!-- content_principal-->
+			</div><!-- sectionPrincipal-->
+
+		</div>
+	</div><!-- Div wrapper-->
+
+	<div id="dFooter" class="content_footer">
+		<div class="divfooter">
+			<strong>© Diseñado y desarrollado por la Oficina de Tecnologías de la Información (OTI) - 2023 <a
+					href="http://telematica.unmsm.edu.pe/">OTI UNAP </a></strong>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$("#radio1").click(function () {
+
+			$("#comboDep").show();
+			$("#comboFac").hide();
+
+
+		});
+
+		$("#radio2").click(function () {
+
+			$("#comboDep").hide();
+			$("#comboFac").show();
+
+
+		});
+
+
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Asigna el valor 1 a la variable cuando se hace clic en el botón "Mostrar"
+			$("#form1 .btnform input[type='submit']").click(function () {
+				$("#variableForm1").val("1");
+			});
+
+			// Asigna el valor 0 a la variable cuando se hace clic en el botón "Buscar"
+			$("#form2 .btnform input[type='submit']").click(function () {
+				$("#variableForm2").val("0");
+			});
+		});
+	</script>
+</body>
+
+</html>
